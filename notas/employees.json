@@ -1,0 +1,18 @@
+{
+    "created": [
+        {
+            "nombre":"Jesus Raul",
+            "apellidos":"Alarcon Ontiveros",
+            "fechaNacimiento":"1992-02-22",   
+            "telefono":"6673770957",
+            "email":"thelowlevelcode@gmail.com",
+            "curp":"MAHJ280603MSPRRV09",
+            "rfc":"CUPU800825569"
+        }
+    ],
+    "updated": [
+        {
+            "nombre":"Jose perez"
+        }
+    ]
+}
