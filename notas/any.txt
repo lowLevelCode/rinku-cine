@@ -1,0 +1,50 @@
+# datos de un empleado.
+
+Nombre y apellidos
+Número de Identificación (DNI o NIE)
+Fecha de Nacimiento
+Dirección postal
+Teléfono
+Email
+Número de la Seguridad Social
+Cargo en la empresa / Área de trabajo / Funciones
+Observaciones
+Curp
+Rfc
+
+
+
+# calculadora fiscal :
+- sueldo Base = $30
+- jornada Laboral = 8 horas
+- adicional por entrega = $5
+
+- bono para choferes diario = $10 * jornada laboral
+- bono cargadores = $5 * hora
+- retencion de impuestos = 9% en caso de que sobrepase el sueldo a los 16k se retiene un 3% adicional (12%)
+
+* los auxiliares se pueden comportar como choferes o cargadores
+* empleados reciben 4% sobre su sueldo vales de despensa antes de impuestos
+
+caso - chofer hace las 100 entregas -> {
+    # salario bruto
+    subcontratado = false;
+    dia laboral = sueldo base * jornada laboral; // 240
+    salario de el mes = 26 dias * dia labor; // 6240 aprox
+    dinero de entregas = 100 * 5; // 500 por 100 entregas
+    dinero de bonos = 26 dias * bono choferes diario; // 80 * 26 -> 2080
+    salario de el mes += dinero de entregas; // 6240 + 500 -> 6740
+    salario de el mes += dinero de bonos; // 6740 + 2080 ->  8820
+
+    // todos los empleados reciben vale de despensa siempre que sean contratados.
+    vales de despensa = (subcontratado) ? 0 : salario de el mes * 0.04; // 352.80
+
+    # salario neto 
+    // en este caso
+    ISR = (salario de el mes <= 16k) ? salario de el mes * 0.09 : salario de el mes * 0.12;
+
+    salario de el mes -= ISR; //  8820 - 793.8 = 8026.20
+
+    deberia de ser -> 8026.20
+}
+

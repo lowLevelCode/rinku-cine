@@ -9,7 +9,7 @@ export class EchoController {
 
   @Get()
   @ApiOperation({ summary: 'Endpoint to test' })
-  getEcho(): string {
+  getEcho(){
     return this.echoService.getEcho();
   }
 }

@@ -4,10 +4,10 @@ import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
   { 
-    path: '', component: AdminComponent, children:[
-      
+    path: '', component: AdminComponent, children:[      
+      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) }
     ]
-  }
+  },
 ];
 
 @NgModule({
